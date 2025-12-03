@@ -167,42 +167,158 @@ img{
 
 /* FIN MODULARIZACION*/
 
-/* INICIO HEADER*/
-.header{
-    display: flex;
-    flex-direction: column;
-    /*height: 400px;*/
-    background-color:var(--color_2);
-}
-.header_row{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+
+/* FIN HEADER*/
+
+/*Incio Menu*/
+header{
+  background: var(--color_4);
+  background-image: url(../imagenes/Interfaz/textura.png);
+  background-size: contain;
+  background-position: center;
 }
 
+/* FILA DEL HEADER */
+header .header_row{
+  display: flex;
+  justify-content: space-between;  
+  padding: 12px 24px;
+  gap: 24px;
+}
+
+/* LOGO AUKI */
+header .header_row .logo{
+  display: flex;
+  justify-content: center;  
+  font-family: 'Karantina';
+  padding: 6px 20px;
+}
+
+header .header_row .logo_1{
+  color: #452829;
+  font-family: 'Karantina';
+  font-size: 54.2px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 7.514px;
+}
+
+/* BOTÓN HAMBURGUESA (MOBILE) */
+.btn_menu_mobile{
+  width: 43px;
+  height: 43px;
+  display: block;
+  background: url(../imagenes/interfaz/btn_menu.svg);
+  background-size: cover;
+  background-position: center;
+  outline: 0;
+  border: 0;
+  text-indent: -9999px; 
+  cursor: pointer;
+}
+
+/* NAV CLÁSICO OCULTO EN MÓVIL (por si lo usas en desktop) */
+header .menu_nav{
+  display:none;
+}
+/* Lista de pastillas */
 .menu_nav_ul{
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
+  list-style: none;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 0;          
+  margin: 0;
 }
+/* Ajuste fino vertical */
+.menu_nav_ul .boton_menu {
+  margin-top: 6px;   
+}
+
+/* PASTILLAS */
 .boton_menu{
-    background-color: var(--color_2);
-    padding:20px 30px;
-    text-decoration: none;
-    text-align: center;
-    font-size:var(--h6);
-    transition: 300ms all;
+  display: inline-block;
+  padding: 8px 26px;
+  background-color: #f3e8df;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--color_1);
+  font-family: 'Karantina', cursive;
+  font-size: 22px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  box-shadow: 0 0 0 2px rgba(0,0,0,0.05);
+  transition: transform 0.15s ease,
+              box-shadow 0.15s ease,
+              background-color 0.15s ease;
 }
+
 .boton_menu:hover{
-    background-color: var(--color-neo_2);
-    color: var(--color-neo_6);
+  background-color: #e0d3c4;
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.12);
+  transform: translateY(-1px);
 }
-/* FIN HEADER*/
+@media (min-width:1024px){
+  header .menu_nav{
+    display:block;      /* muestro las pastillas */
+  }
+
+  .btn_menu_mobile{
+    display:none;       /* oculto la hamburguesa en desktop */
+  }
+}
+
+/* MENÚ DESPLEGABLE LATERAL */
+.menu_desplegable {
+position: fixed;
+top: 0;
+right: 0;                 
+width: 70%;
+max-width: 320px;
+height: 100vh;
+background: var(--color_4);       
+transform: translateX(100%);      
+transition: transform 0.3s ease;
+box-shadow: -4px 0 10px rgba(0,0,0,0.25);
+z-index: 1000;
+}
+
+.menu_desplegable.menu_abierto {
+transform: translateX(0);         
+}
+
+.menu_lista {
+list-style: none;
+margin: 0;
+padding: 16px 0 0 0;
+}
+
+.menu_lista li a {
+display: block;
+padding: 12px 20px;
+text-decoration: none;
+font-weight: 700;
+font-size: var(--h6);
+color: var(--color_1);
+text-transform: uppercase;
+border-bottom: 2px dashed var(--color_1); 
+}
+
+/* Botón CERRAR */
+.cerrar-menu {
+margin-top: 24px;
+width: 100%;
+padding: 12px 20px;
+border: none;
+background: var(--color_1);      
+color: var(--color_3);
+font-weight: 700;
+font-size: var(--h6);
+text-align: left;
+cursor: pointer;
+}
+/*Fin Menu*/
 
 /* INICIO INDEX - TANIA*/
 #hero {
@@ -544,11 +660,75 @@ line-height: normal;
 /* FIN CREDITOS*/
 
 /* INICIO DE FOOTER */
-.footer{
-
+.footer {
+  background: var(--color_4);
+  padding: 16px 24px 24px;   
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--color_1);
+  border-top: 4px dashed var(--color_1); /* línea punteada superior */
 }
-/* FIN FOOTER*/
 
+/* parte superior: AUKI + texto */
+.footer_top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+/* AUKI grande a la izquierda */
+.footer_logo_auki {
+  font-family: 'Karantina', cursive;
+  font-size: 48px;           /* un poco más chico que antes (56px) */
+  letter-spacing: 0.3em;
+  color: var(--color_1);
+}
+
+/* Texto de la derecha */
+.footer_text {
+  font-size: 22px;           /* en vez de var(--h4) para que no sea tan grande */
+  text-align: right;
+}
+
+/* Línea punteada horizontal del medio */
+.footer_separator {
+  border-top: 4px dashed var(--color_1);
+  margin: 16px 0 20px;       
+}
+
+/* Texto de abajo centrado */
+.footer_bottom {
+  text-align: center;
+  line-height: 1.5;
+  font-size: 14px;           
+}
+
+/* Responsive: en pantallas pequeñas, AUKI arriba y texto abajo */
+@media (max-width: 768px) {
+  .footer {
+    padding: 12px 16px 20px;
+  }
+
+  .footer_top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .footer_text {
+    text-align: left;
+    font-size: 18px;
+  }
+
+  .footer_logo_auki {
+    font-size: 40px;
+  }
+
+  .footer_bottom {
+    font-size: 12px;
+  }
+}
+/* FIN FOOTER */
 
 
 
@@ -569,8 +749,13 @@ line-height: normal;
 }
 /* LAPTOPS Y DESKTOP PEQUEÑAS */
 @media (min-width:1024px){
-    .contenedor{
-    }
+  header .menu_nav{
+    display:block;      /* muestro las pastillas */
+  }
+
+  .btn_menu_mobile{
+    display:none;       /* oculto el botón hamburguesa */
+  }
 }
 /* DESKTOPS Y TVS GRANDES */
 @media (min-width:1280px){

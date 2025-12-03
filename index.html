@@ -8,25 +8,37 @@
     <script src="funciones/script.js"></script>
 </head>
 <body>
-    <header class="header">
-        <div class="headrer_row">
-            <div class="logo">
-                <h1 class="logo_1">Leyendas y Mitos de Bolivia</h1>
-            </div>
-            <nav class="menu_nav">
-                <ul class="menu_nav_ul">
-                        <li><a class="boton_menu" href="index.html">Inicio</a></li>
-                        <li><a class="boton_menu" href="leyendas.html">Leyendas</a></li>
-                        <li><a class="boton_menu" href="mitos.html">Mitos</a></li>
-                        <li><a class="boton_menu" href="mi_coleccion.html">Mi colección</a></li>
-                        <li><a class="boton_menu" href="perfil.html">Perfil</a></li>
-                        <li><a class="boton_menu" href="sobre_el_proyecto.html"> Sobre el proyecto</a></li>
-                        <li><a class="boton_menu" href="creditos.html">Creditos</a></li>
-                </ul>
-            </nav>
-        </div>
-        
-    </header>
+<header class="header">
+  <div class="header_row">
+    <div class="logo">
+      <h1 class="logo_1">AUKI</h1>
+    </div>
+
+    <!-- NAV DESKTOP: pastillas -->
+    <nav class="menu_nav">
+      <ul class="menu_nav_ul">
+        <li><a class="boton_menu" href="index.html">INICIO</a></li>
+        <li><a class="boton_menu" href="mitos.html">MITOS Y LEYENDAS</a></li>
+        <li><a class="boton_menu" href="mi_coleccion.html">MI COLECCIÓN</a></li>
+        <li><a class="boton_menu" href="sobre_el_proyecto.html">PROYECTO</a></li>
+      </ul>
+    </nav>
+
+    <!-- Botón hamburguesa (solo mobile) -->
+    <button id="btn-menu" class="btn_menu_mobile">Menú</button>
+  </div>
+
+  <!-- MENÚ DESPLEGABLE LATERAL (mobile) -->
+  <nav class="menu_desplegable" id="menu-desplegable">
+    <ul class="menu_lista">
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="mitos.html">MITOS Y LEYENDAS</a></li>
+      <li><a href="mi_coleccion.html">MI COLECCIÓN</a></li>
+      <li><a href="sobre_el_proyecto.html">PROYECTO</a></li>
+    </ul>
+    <button class="cerrar-menu" id="cerrar-menu">CERRAR</button>
+  </nav>
+</header>
     <main>
         <section >
             <div></div>
@@ -71,20 +83,30 @@
     
     
     <footer class="footer">
-
-        <div>
-            <img src="imagenes/logo.png" alt="Loguito">
-            <p>Hecho en Bolivia por [Tu Nombre o Equipo]</p>
-            <p><em>“Una frase inspiradora o temática relacionada con leyendas y mitos.”</em></p>
-        </div>
-
-
-        <div>
-            <p>Políticas de privacidad</p>
-            <p>© 2025 Leyendas Bolivianas.</p>
-        </div>
-
-    </footer>
-
+      <div class="footer_top">
+          <div class="footer_left">
+              <span class="footer_logo_auki">AUKI</span>
+          </div>
+      </div>
+      
+      <div class="footer_separator"></div>
+      
+      <!-- Texto legal en la parte inferior -->
+      <div class="footer_bottom">
+          <div class="footer_left_text">
+              <p>© 2025 Leyendas Bolivianas.</p>
+          </div>
+          <div class="footer_center_text">
+              <p>Hecho en La Paz, Bolivia.</p>
+          </div>
+          <div class="footer_right_text">
+              <p>Todos los derechos reservados.</p>
+          </div>
+      </div>
+  </footer>  
+  
 </body>
 </html>
+
+
+

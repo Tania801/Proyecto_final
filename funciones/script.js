@@ -136,6 +136,9 @@ fetch('../datos/perfil.json')
     const botones = document.querySelectorAll('.filtro');
     const lista = document.getElementById('lista');
 
+    // Si no hay lista (por ejemplo en otras páginas), no hacemos nada
+    if (!lista) return;
+
     botones.forEach(btn => {
       btn.addEventListener('click', () => {
         const tipo = btn.dataset.tipo;
@@ -149,29 +152,42 @@ fetch('../datos/perfil.json')
     });
   });
 
-// Para editar el nombre y la descripcion 
-document.getElementById('editarTexto').addEventListener('click', () => {
-  const nuevoNombre = prompt('Nuevo nombre:', document.getElementById('nombreUsuario').textContent);
-  const nuevaDesc = prompt('Nueva descripción:', document.getElementById('descripcion').textContent);
+document.addEventListener("DOMContentLoaded", () => {
+  // Para editar el nombre y la descripcion 
+  const btnEditarTexto = document.getElementById('editarTexto');
+  const nombreUsuario = document.getElementById('nombreUsuario');
+  const descripcion = document.getElementById('descripcion');
 
-  if (nuevoNombre) document.getElementById('nombreUsuario').textContent = nuevoNombre;
-  if (nuevaDesc) document.getElementById('descripcion').textContent = nuevaDesc;
-});
+  if (btnEditarTexto && nombreUsuario && descripcion) {
+    btnEditarTexto.addEventListener('click', () => {
+      const nuevoNombre = prompt('Nuevo nombre:', nombreUsuario.textContent);
+      const nuevaDesc = prompt('Nueva descripción:', descripcion.textContent);
 
-// Para cambiar imagen desde archivos del escritorio
-const inputImagen = document.getElementById('inputImagen');
-document.getElementById('editarImagen').addEventListener('click', () => {
-  inputImagen.click();
-});
+      if (nuevoNombre) nombreUsuario.textContent = nuevoNombre;
+      if (nuevaDesc) descripcion.textContent = nuevaDesc;
+    });
+  }
 
-inputImagen.addEventListener('change', () => {
-  const archivo = inputImagen.files[0];
-  if (archivo) {
-    const lector = new FileReader();
-    lector.onload = function(e) {
-      document.getElementById('avatar').src = e.target.result;
-    };
-    lector.readAsDataURL(archivo);
+  // Para cambiar imagen desde archivos del escritorio
+  const inputImagen = document.getElementById('inputImagen');
+  const btnEditarImagen = document.getElementById('editarImagen');
+  const avatar = document.getElementById('avatar');
+
+  if (inputImagen && btnEditarImagen && avatar) {
+    btnEditarImagen.addEventListener('click', () => {
+      inputImagen.click();
+    });
+
+    inputImagen.addEventListener('change', () => {
+      const archivo = inputImagen.files[0];
+      if (archivo) {
+        const lector = new FileReader();
+        lector.onload = function(e) {
+          avatar.src = e.target.result;
+        };
+        lector.readAsDataURL(archivo);
+      }
+    });
   }
 });
 
@@ -258,6 +274,30 @@ document.addEventListener("DOMContentLoaded", cargarProyecto);
 }
 
 document.addEventListener("DOMContentLoaded", cargarCreditos);*/
+
+document.addEventListener("DOMContentLoaded", () => {
+  const btnMenu = document.getElementById('btn-menu');
+  const menuDesplegable = document.getElementById('menu-desplegable');
+  const btnCerrar = document.getElementById('cerrar-menu');
+
+  if (!btnMenu || !menuDesplegable || !btnCerrar) return;
+
+  btnMenu.addEventListener('click', () => {
+    menuDesplegable.classList.add('menu_abierto');
+  });
+
+  btnCerrar.addEventListener('click', () => {
+    menuDesplegable.classList.remove('menu_abierto');
+  });
+
+  menuDesplegable.addEventListener('click', (e) => {
+    if (e.target === menuDesplegable) {
+      menuDesplegable.classList.remove('menu_abierto');
+    }
+  });
+});
+
+
 
 //const URL_PROY = '../datos/sobre-proyecto.json';
 
