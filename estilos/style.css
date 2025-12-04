@@ -155,7 +155,7 @@ body{
 img{
     display: block;
     width: 100%;
-    background-color: var(--color-neo_3);
+    /*background-color: var(--color-neo_3);*/
     min-width: 300px;
     min-height: 300px;
     margin-bottom: var(--padding-1);
@@ -573,25 +573,28 @@ line-height: normal;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
   gap: var(--gap-1);
 
 }
 .mistica_cards_1_titulo{
   position: relative;
-  top: 10%;
-  left: 0%;
-  display: flex;
-  width: 294px;
+  z-index: 1;
+  /*top: 0%;
+  left: 0%;*/
+  display:flex;
+  width: 250px;
   height: 92px;
   justify-content: center;
   align-items: center;
   text-align: center;
   background-color: var(--color_5);
-  padding: 16px;
+  padding: 20px 16px 30px 16px;
   gap: var(--gap-1);
   color: var(--color_3);
   border-radius: 20px 20px 0px 0px;
-
+  margin-bottom: -10%;
+  
   /*position: relative;
   top: 10%;                     /* lo pone arriba del svg, ajusta según necesites 
   left: 50%;                   
@@ -614,25 +617,37 @@ line-height: normal;
   flex-direction: column;
   justify-content: center;
   align-items: center;*/
+  display: block;
+  position: relative;
   
+  z-index: 2;
   
 }
 .mistica_cards_1_texto{
   position: relative;
-  top: 50%;
-  left: 0%;
+  z-index: 1;
+  /*top: 0%;
+  bottom: -50;
+  left: 0%;*/
   display: flex;
   background-color: var(--color_1);
   color: var(--color_3);
   width: 253px;
-  padding: 16px;
+  padding: 50px 16px 16px 16px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: var(--gap-1);
   border-radius: 0px 0 20px 20px;
+  margin-top: -15%;
+  
 }
+.btn-mistico_1{
+  
+}
+
+
 
 .mistica_cards_2{}
 .mistica_cards_2_titulo{}
@@ -696,23 +711,34 @@ line-height: normal;
   align-items: center;
   gap: var(--gap-1);
 }
-.sagrada_cards_1_titulo{}
-.sagrada_cards_1_imagen{}
+.sagrada_cards_1_titulo{
+  /*position: relative;
+  z-index: 1;
+  margin-bottom: -10%;*/
+}
+.sagrada_cards_1_imagen{
+  display: block;
+  position: relative;
+  
+  z-index: 2;
+}
 .sagrada_cards_1_texto{
   position: relative;
-  top: 0%;
-  left: 0%;
+  z-index: 1;
+  /*top: 0%;
+  left: 0%;*/
   display: flex;
   background-color: var(--color_3);
   color: var(--color_1);
   width: 253px;
-  padding: 16px;
+  padding: 40px 16px 16px 16px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   gap: var(--gap-1);
   border-radius: 0px 0 20px 20px;
+  margin-top: -15%;
 }
 
 .sagrada_cards_2{}
@@ -732,10 +758,61 @@ line-height: normal;
 .historica_imagen{}
 
 .historica_cards{}
-.historica_cards_1{}
-.historica_cards_1_titulo{}
-.historica_cards_1_imagen{}
-.historica_cards_1_texto{}
+.historica_cards_1{
+  display: flex;
+  /*width: 360px;
+  height: 665px;*/
+  padding: 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: var(--gap-1);
+}
+.historica_cards_1_titulo{
+  position: relative;
+  z-index: 1;
+  /*top: 0%;
+  left: 0%;*/
+  display:flex;
+  width: 250px;
+  height: 92px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--color_5);
+  padding: 20px 16px 30px 16px;
+  gap: var(--gap-1);
+  color: var(--color_3);
+  border-radius: 20px 20px 0px 0px;
+  margin-bottom: -10%;
+}
+.historica_cards_1_imagen{
+  display: block;
+  position: relative;
+  
+  z-index: 2;
+  
+}
+.historica_cards_1_texto{
+  position: relative;
+  z-index: 1;
+  /*top: 0%;
+  bottom: -50;
+  left: 0%;*/
+  display: flex;
+  background-color: var(--color_1);
+  color: var(--color_3);
+  width: 253px;
+  padding: 50px 16px 16px 16px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: var(--gap-1);
+  border-radius: 0px 0 20px 20px;
+  margin-top: -15%;
+}
 
 .hisorica_cards_2{}
 .historica_cards_2_titulo{}
@@ -743,11 +820,69 @@ line-height: normal;
 .historica_cards_2_texto{}
 
 /* SECCION RESPONSIVE*/
-/* CELULARES*/
-@media (min-width: 320px) {
+/* DESKTOP*/
+@media (min-width: 1200px) {
   .mistica{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: none;
+    padding: 70px;
     
   }
+  .mistica_titulo{
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    text-align: left;
+  }
+  .mistica_imagen{
+    grid-row: 1 / 4;
+    grid-column: 2 / 3;
+  }
+  .mistica_texto{
+    grid-row: 2/ 4;
+    grid-column: 1 / 2;
+    text-align: left;
+  }
+  .mistica_cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: none;
+    padding: 70px;
+  }
+  .mistica_cards_1{
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+  .mistica_cards_2{
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+  }
+  .mistica_cards_3{
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+  }
+  .sagrada_cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border: none;
+  }
+  .sagrada_cards_1{
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+  }
+  .sagrada_cards_2{
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+  }
+  .sagrada_cards_3{
+    grid-row: 1 / 2;
+    grid-column: 3 / 4;
+  }
+
+  .mistica_cards_1:hover{
+  transform: scale(1.05);
+
+}
 }
 
 /* TABLETS*/
