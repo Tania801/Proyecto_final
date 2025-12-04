@@ -697,7 +697,7 @@ line-height: normal;
   flex-direction: column;
   justify-content: center;
   /*margin: 16px;*/
-  /*padding: 16px;*/
+  padding: 25px;
   background-color:var(--color_1) ;
   color: var(--color_3);
 }
@@ -757,7 +757,15 @@ line-height: normal;
 .historica_texto{}
 .historica_imagen{}
 
-.historica_cards{}
+.historica_cards{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*margin: 16px;*/
+  /*padding: 16px;*/
+  background-color:var(--color_3) ;
+  color: var(--color_1);
+}
 .historica_cards_1{
   display: flex;
   /*width: 360px;
@@ -833,21 +841,24 @@ line-height: normal;
     grid-row: 1 / 2;
     grid-column: 1 / 2;
     text-align: left;
+    padding: 150px 0px 0px 50px;
   }
   .mistica_imagen{
     grid-row: 1 / 4;
     grid-column: 2 / 3;
+    align-items: center;
   }
   .mistica_texto{
-    grid-row: 2/ 4;
+    grid-row: 2/ 3;
     grid-column: 1 / 2;
     text-align: left;
+    padding: 0px 0px 0px 50px;
   }
   .mistica_cards{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     border: none;
-    padding: 70px;
+    padding:0px 70px 70px 70px;
   }
   .mistica_cards_1{
     grid-row: 1 / 2;
@@ -861,10 +872,44 @@ line-height: normal;
     grid-row: 1 / 2;
     grid-column: 3 / 4;
   }
+
+  .mistica_cards_1_titulo{
+    display: flex;
+    width: 250px;
+    height: 92px;
+    padding: 35px 16px 45px 16px;
+  }
+  .mistica_cards_1_texto{
+  }
+  .sagrada{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: none;
+    padding: 70px;
+    
+  }
+  .sagrada_titulo{
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    text-align: left;
+    padding: 100px 0px 0px 50px;
+  }
+  .sagrada_imagen_desktop{
+    grid-row: 1/ 4;
+    grid-column: 2/ 3;
+    /*align-items: center;*/
+  }
+  .sagrada_texto{
+    grid-row: 2 / 3;
+    grid-column: 1 / 2;
+    text-align: left;
+    padding: 0px 0px 0px 50px;
+  }
   .sagrada_cards{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     border: none;
+    padding:0px 70px 70px 70px;
   }
   .sagrada_cards_1{
     grid-row: 1 / 2;
@@ -878,11 +923,31 @@ line-height: normal;
     grid-row: 1 / 2;
     grid-column: 3 / 4;
   }
+  .historica_cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    border: none;
+    padding:0px 70px 70px 70px;
+  }
+  .historica_cards_1{
+    grid-row: 1 / 2;
+    grid-column: 2 / 3;
+
+  }
+  .historica_cards_2{
+    grid-row: 1 / 2;
+    grid-column: 4 / 5;
+  }
 
   .mistica_cards_1:hover{
   transform: scale(1.05);
-
-}
+  }
+  .sagrada_cards_1:hover{
+  transform: scale(1.05);
+  }
+  .historica_cards_1:hover{
+  transform: scale(1.05);
+  }
 }
 
 /* TABLETS*/
