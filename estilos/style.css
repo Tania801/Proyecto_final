@@ -961,6 +961,104 @@ line-height: normal;
 
 /* FIN LEYENDAS*/
 
+/*-------------------------------------------*/
+/* INICIO CONTENIDO LEYENDAS*/
+.inicio{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /*margin: 16px;*/
+  padding: 16px;
+  background-color:var(--color_3) ;
+  color: var(--color_1);
+  gap: var(--gap-1);
+}
+.inicio_titulo{
+  /*position: relative;
+  z-index: 2;*/
+  display: flex;
+  padding: 16px;
+  background-color: var(--color_5);
+  color: var(--color_3);
+  border-radius: 0px 0px 20px 20px;
+  text-align: center;
+  font-family: Karantina;
+  font-size: 33.18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.inicio_categoria{
+  /*position: relative;
+  z-index: 1;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px var(--padding_5) 10px var(--padding_5);
+  background-color: var(--color_4);
+  color: var(--color_1);
+  border-radius: 0px 0px 10px 10px;
+  text-align: center;
+  margin-top: -10%;
+
+  /* karatina desk h4 */
+  font-family: Karantina;
+  font-size: 33.16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+}
+.inicio_descripcion{
+  text-align: center;
+  color: var(--color_1);
+
+  font-family: "IBM Plex Mono";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 149%; /* 23.84px */
+}
+.inicio_imagen{
+  position: relative;
+  z-index: 1;
+}
+.btn_agregar{
+  position: relative;
+  z-index: 2;
+  padding: 16px;
+  /*position: relative; /*  Permite anclarlo. */
+  
+  /* Posicionamiento en la esquina inferior derecha */
+  /*bottom: 0px; 
+  right: 0px; 
+
+ /* width: 60px;
+  height: 60px;*/
+  
+  /*z-index: 2;*/
+}
+.imag_agregar{
+  
+  min-width: 60px;
+  min-height: 60px;
+  flex-shrink: 0;
+  aspect-ratio: 1/1;
+}
+.contenido{}
+.contenido_texto{}
+.datos{}
+.datos_titulo{}
+.datos_cards{}
+.datos_cards_1{}
+.datos_cards_1_imagen{}
+.datos_cards_1_texto{}
+.datos_cards_2{}
+.datos_cards_2_imagen{}
+.datos_cards_2_texto{}
+
+/* FIN CONTENIDO LEYENDAS*/
+/*-------------------------------------------*/
 
 /* INICIO  LEYENDAS Y MITOS */
 
