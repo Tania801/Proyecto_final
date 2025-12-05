@@ -152,15 +152,15 @@ body{
     font-family: 'IBM Plex Mono';  /*agregar tipografia*/
 }
 
-img{
+/*img{
     display: block;
     width: 100%;
-    /*background-color: var(--color-neo_3);*/
+    /*background-color: var(--color-neo_3);
     min-width: 300px;
     min-height: 300px;
     margin-bottom: var(--padding-1);
     
-}
+}*/
 /* SELECTORES PARA CADA ETIQUETA TIPOGRAFICA*/
 
 /* INICIO MODULARIZACION*/
@@ -974,14 +974,16 @@ line-height: normal;
   gap: var(--gap-1);
 }
 .inicio_titulo{
-  /*position: relative;
-  z-index: 2;*/
+  position: relative;
+  z-index: 2;
   display: flex;
   padding: 16px;
   background-color: var(--color_5);
   color: var(--color_3);
   border-radius: 0px 0px 20px 20px;
   text-align: center;
+
+
   font-family: Karantina;
   font-size: 33.18px;
   font-style: normal;
@@ -989,16 +991,18 @@ line-height: normal;
   line-height: normal;
 }
 .inicio_categoria{
-  /*position: relative;
-  z-index: 1;*/
+  position: relative;
+  z-index: 1;
   display: flex;
   justify-content: center;
+  display: inline-flex;
   align-items: center;
-  padding: 5px var(--padding_5) 10px var(--padding_5);
+  padding: 20px 16px 0px 16px;
   background-color: var(--color_4);
   color: var(--color_1);
   border-radius: 0px 0px 10px 10px;
   text-align: center;
+  /*margin-top: 0px;*/
   margin-top: -10%;
 
   /* karatina desk h4 */
@@ -1024,38 +1028,202 @@ line-height: normal;
   z-index: 1;
 }
 .btn_agregar{
-  position: relative;
-  z-index: 2;
+  
+  
   padding: 16px;
   /*position: relative; /*  Permite anclarlo. */
-  
-  /* Posicionamiento en la esquina inferior derecha */
-  /*bottom: 0px; 
+  /*position: relative;
+  /* Posicionamiento en la esquina inferior derecha 
+  bottom: 0px; 
   right: 0px; 
-
- /* width: 60px;
-  height: 60px;*/
-  
-  /*z-index: 2;*/
+  margin-top: -20%;
+  z-index: 2;*/
 }
 .imag_agregar{
   
+  justify-content: right;
   min-width: 60px;
   min-height: 60px;
   flex-shrink: 0;
   aspect-ratio: 1/1;
+  background-color: var(--color_4);
+  border-radius: 100%;
+  position: relative;
+  /* Posicionamiento en la esquina inferior derecha */
+  bottom: 0px; 
+  right: 0px; 
+  margin-top: -35%;
+  margin-left: 75%;
+  z-index: 2;
 }
-.contenido{}
+.contenido{
+  padding: 16px;
+  color: var(--color_1);
+  text-align: center;
+  background-color: var(--color_3);
+
+  font-family: "IBM Plex Mono";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 149%; /* 23.84px */
+}
 .contenido_texto{}
-.datos{}
-.datos_titulo{}
-.datos_cards{}
-.datos_cards_1{}
-.datos_cards_1_imagen{}
-.datos_cards_1_texto{}
-.datos_cards_2{}
-.datos_cards_2_imagen{}
+.datos{
+    background-color: var(--color_3);
+  /*align-items: center;*/
+  padding: 16PX;
+
+}
+.datos_titulo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 16px;
+  width: 251px;
+  height: 60px;
+  color: var(--color_3);
+  background-color: var(--color_5);
+  border-radius: 0px 0px 20px 20px;
+  font-family: Karantina;
+  font-size: 33.18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.datos_cards{
+  
+}
+.datos_cards_1{
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0px 0px 0px;
+}
+.datos_cards_1_imagen{
+  display: block;
+  position: relative;
+  
+  z-index: 2;
+}
+.datos_cards_1_texto{
+  position: relative;
+  z-index: 1;
+  /*top: 0%;
+  left: 0%;*/
+  /*display: flex;
+  flex-direction: column;*/
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: auto;
+  background-color: var(--color_4);
+  color: var(--color_1);
+  width: 312px;
+  padding: 50px 16px 16px 16px;
+  /*gap: var(--gap-1);*/
+  border-radius: 10px 10px 20px 20px;
+  margin-top: -15%;
+}
+.datos_cards_2{
+  display: flex;
+  flex-direction: column;
+  padding: 30px 0px 0px 0px;
+}
 .datos_cards_2_texto{}
+
+
+@media (min-width: 1200px) {
+  
+  .inicio{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border: none;
+    padding: 70px;
+    column-gap: 80px;
+    
+  }
+  .inicio_titulo{
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    align-items:left;
+    border-radius: 0px 0px 20px 0px;
+  }
+  .inicio_categoria{
+    grid-row: 2 / 3;
+    grid-column: 1/2 ;
+
+  }
+  .inicio_descripcion{
+    grid-row: 3/4;
+    grid-column: 1/2;
+    text-align: left;
+    padding: 50px 80px 0px 0px;
+
+  }
+  .ilustracion_agregar{
+    grid-row: 1/ 4;
+    grid-column: 2 / 3;
+  }
+  .btn_agregar{
+    grid-row: 1/ 4;
+    grid-column: 2 / 3;
+  }
+  .imag_agregar{
+    grid-row: 1/ 4;
+    grid-column: 2 / 3;
+    transform: translate( -300%, 10%);
+  }
+  /*.datos{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    /*grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+    border: none;
+    padding: 70px;
+  }*/
+  .datos_titulo{
+    grid-row: 1 / 2;
+    grid-column: 1 / 6;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 16px;
+    
+    /*font-family: Karantina;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;*/
+  }
+  .datos_cards{
+    /*display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    border: none;
+    /*padding: 0px 100px 0px 100px;*/
+
+    display: grid;
+    /*grid-template-columns: 1fr 1fr ;*/
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+    border: none;
+    padding: 0px 30px 40px 30px;
+  }
+  .datos_cards_1{
+    grid-row: 1 / 2;
+    grid-column: 2/ 3;
+  }
+  .datos_cards_2{
+    grid-row: 1 / 2;
+    grid-column: 4 / 5;
+  }
+  .datos_cards_1_texto{
+    padding: 60px 16px 16px 16px;
+  }
+
+}
 
 /* FIN CONTENIDO LEYENDAS*/
 /*-------------------------------------------*/
