@@ -1810,3 +1810,71 @@ line-height: normal;
 }
 
 /*BOTON ACTIVADOR*/
+
+
+/*.preguntas_card {
+    display: flex;
+    width: 100%;
+    max-width: 320px;
+    padding: 30px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+    background-color: var(--neo-verde);
+} */
+
+.pregunta_1 p {
+    color: var(--negro);
+    text-align: center;
+    font-family: Karantina;
+    font-size: 38px;
+    margin: 0;
+}
+.opcion_item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+.opcion_item p{
+    color: var(--neo-verde );
+}
+.circulo_selector{
+    background-color: var(--negro);
+}
+.contenedor_opciones {
+    background-color: var(--negro);
+    border-radius: 15px;
+    padding: 20px 30px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.seccion_juego {
+    display: flex;             /* Activa el modo flexible */
+    justify-content: center;    /* Centra la tarjeta horizontalmente */
+    align-items: center;        /* Centra la tarjeta verticalmente */
+    min-height: 100vh;         /* Hace que la sección ocupe todo el alto de la pantalla */
+    width: 100%;               /* Asegura que ocupe todo el ancho */
+    background-color: var(--negro);    /* Color de fondo oscuro como en tu imagen */
+}
+
+.preguntas_card {
+    display: flex;
+    width: 90%;                /* Ocupa el 90% en pantallas pequeñas */
+    max-width: 320px;          /* Pero no crece más de 320px */
+    padding: 30px 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    border-radius: 20px;
+    background-color: var(--neo-verde);
+    /* No hace falta margin: auto si usas flex en el padre */
+}
+.pistas p{
+    font-weight: 700;
+}
